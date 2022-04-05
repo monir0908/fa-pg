@@ -2,8 +2,12 @@ from pydantic import BaseModel
 from typing import Optional
 from datetime import datetime
 
-class Customer(BaseModel):
+class User(BaseModel):
+    id: int
     first_name: str
     last_name: str
-    dob: Optional [datetime]
+    mobile: str
+    
+    class Config:
+        orm_mode = True
     
